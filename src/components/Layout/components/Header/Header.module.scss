@@ -2,6 +2,7 @@
   --search-height: 46px;
   --search-btn-width: 52px;
   --search-input-padding: 16px;
+  --search-input-width: 292px;
 
   width: 100%;
   height: var(--default-layout-header-hight);
@@ -43,7 +44,7 @@
     outline: none;
     background: transparent;
     height: 100%;
-    width: 292px;
+    width: var(--search-input-width);
     padding: 0 var(--search-input-padding);
     caret-color: rgba(254, 44, 85, 1);
     color: var(--black);
@@ -89,4 +90,16 @@
   &:active {
     background: rgba(22, 24, 35, 0.06);
   }
+}
+
+.search-results {
+  width: calc(var(--search-btn-width) + var(--search-input-width));
+}
+
+.search-title {
+  padding: 0 12px 5px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: rgba(22, 24, 35, 0.5);
 }
