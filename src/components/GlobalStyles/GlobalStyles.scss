@@ -2,6 +2,8 @@
 
 :root {
   --primaty: #fe2c55;
+  --black: #000;
+  --text-color: #161823;
 
   //default layout
   --padding-container: 20px;
@@ -26,6 +28,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
+  color: var(--text-color);
 }
 
 // fonts
@@ -51,4 +54,16 @@ body {
   font-family: Sofiapro;
   src: url('/assets/fonts/sofiapro-bold.woff');
   font-weight: 700;
+}
+
+button,
+input,
+[tabindex] {
+  border: none;
+  outline: none;
+}
+
+a[href] {
+  color: var(--text-color);
+  text-decoration: none;
 }

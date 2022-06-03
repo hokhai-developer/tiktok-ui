@@ -16,24 +16,20 @@ function Header() {
         </div>
         <div className={cx('search')}>
           <input
+            className={cx('search-input')}
             type="text"
             placeholder="Search accounts and videos"
             spellCheck={false}
           />
-          <button className={cx('clear')}>
+          <button className={cx('clear-btn')}>
             <ClearIcon />
           </button>
-          <LoadingIcon />
+          <LoadingIcon className={cx('loading')} />
           <button className={cx('search-btn')}>
-            <SearchIcon />
+            <SearchIcon className={cx('search-btn-icon')} />
           </button>
         </div>
-        <Image
-          alt="noidasd"
-          src="https://picsum.phots/200/300"
-          fallback="https://picsum.photos/seed/picsum/200/300"
-        />
-        {/* actions */}
+        <div className="actions">actions</div>
       </div>
     </header>
   );

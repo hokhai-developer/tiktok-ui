@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import images from '~/assets/images';
 import styles from './Image.module.scss';
 
-console.log(images.noImage);
 function Image(
   {
     src,
