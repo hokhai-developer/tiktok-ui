@@ -25,6 +25,21 @@ const MENU_ITEMS = [
   {
     icon: <LanguageIcon />,
     title: 'English',
+    children: {
+      title: 'Language',
+      data: [
+        {
+          type: 'language',
+          code: 'en',
+          title: 'English',
+        },
+        {
+          type: 'language',
+          code: 'vi',
+          title: 'Tiếng Việt',
+        },
+      ],
+    },
   },
   {
     icon: <FeedbackIcon />,

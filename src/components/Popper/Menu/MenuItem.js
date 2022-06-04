@@ -5,13 +5,16 @@ import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 
-function MenuItems({ data }) {
+function MenuItems({ data, onClick }) {
   return (
-    <div>
-      <Button leftIcon={data.icon} className={cx('menu-item')} to={data.to}>
-        <p className={cx('title')}>{data.title}</p>
-      </Button>
-    </div>
+    <Button
+      leftIcon={data.icon}
+      className={cx('menu-item')}
+      to={data.to}
+      onClick={onClick}
+    >
+      <p className={cx('title')}>{data.title}</p>
+    </Button>
   );
 }
 
