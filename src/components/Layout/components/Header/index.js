@@ -5,11 +5,37 @@ import Tippy from '@tippyjs/react/headless';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
-import { ClearIcon, LoadingIcon, SearchIcon } from '~/components/Icons';
+import {
+  ClearIcon,
+  LoadingIcon,
+  SearchIcon,
+  SeeMoreIcon,
+  UploadIcon,
+  LanguageIcon,
+  FeedbackIcon,
+  KeyboardIcon,
+} from '~/components/Icons';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
+import Menu from '~/components/Popper/Menu';
 
 const cx = classNames.bind(styles);
+
+const MENU_ITEMS = [
+  {
+    icon: <LanguageIcon />,
+    title: 'English',
+  },
+  {
+    icon: <FeedbackIcon />,
+    title: 'Feedback and help',
+    to: '/feedback',
+  },
+  {
+    icon: <KeyboardIcon />,
+    title: 'Keyboards shortcuts',
+  },
+];
 
 function Header() {
   const [searchResult, setSearchResult] = useState([123]);
@@ -54,7 +80,23 @@ function Header() {
           </div>
         </Tippy>
         <div className={cx('actions')}>
-          <Button rank="third">Log In</Button>
+          <Button
+            rank="third"
+            leftIcon={<UploadIcon className={cx('upload-icon')} />}
+            className={cx('upload')}
+          >
+            Upload
+          </Button>
+
+          <Button rank="first" className={cx('login')}>
+            Log in
+          </Button>
+
+          <Menu items={MENU_ITEMS}>
+            <button className={cx('see-more')}>
+              <SeeMoreIcon />
+            </button>
+          </Menu>
         </div>
       </div>
     </header>

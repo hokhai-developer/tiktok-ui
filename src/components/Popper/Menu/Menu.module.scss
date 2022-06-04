@@ -1,0 +1,24 @@
+.menu-list {
+  min-width: 230px;
+}
+
+.menu-propper {
+  padding-bottom: 8px;
+  padding-top: 8px;
+}
+
+.menu-item {
+  width: 100%;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 22px;
+  padding: 10px 16px;
+
+  .title {
+    transform: translateY(-2px);
+  }
+
+  &:hover {
+    background: rgba(22, 24, 35, 0.03);
+  }
+}
