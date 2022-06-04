@@ -1,8 +1,4 @@
-export const UploadIcon = ({
-  width = '1.4rem',
-  height = '1.4rem',
-  className,
-}) => (
+export const UploadIcon = ({ width = '2rem', height = '2rem', className }) => (
   <svg
     className={className}
     width={width}
