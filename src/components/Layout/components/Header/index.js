@@ -53,7 +53,7 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-  const [searchResult, setSearchResult] = useState([123]);
+  const [searchResult, setSearchResult] = useState([]);
 
   return (
     <header className={cx('wrapper')}>
@@ -64,9 +64,10 @@ function Header() {
         <Tippy
           visible={searchResult.length > 0}
           interactive={true}
+          placement="bottom-end"
           render={(attrs) => (
             <div className={cx('search-results')} tabIndex="-1" {...attrs}>
-              <PopperWrapper>
+              <PopperWrapper className={cx('search-popper')}>
                 <h4 className={cx('search-title')}>Accounts</h4>
                 <AccountItem />
                 <AccountItem />

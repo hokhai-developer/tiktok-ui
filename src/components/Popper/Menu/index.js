@@ -23,7 +23,7 @@ function Menu({ children, items = [] }) {
           key={index}
           onClick={() => {
             if (isParent) {
-              setHistory((pre) => [...pre, item.children]);
+              setHistory((prev) => [...prev, item.children]);
             }
           }}
         />
@@ -32,12 +32,11 @@ function Menu({ children, items = [] }) {
   };
 
   const handleBack = () => {
-    setHistory((pre) => pre.slice(0, pre.length - 1));
+    setHistory((prev) => prev.slice(0, prev.length - 1));
   };
 
   return (
     <Tippy
-      visible
       interactive
       placement="bottom-end"
       delay={[0, 500]}
@@ -51,6 +50,9 @@ function Menu({ children, items = [] }) {
           </PopperWrapper>
         </div>
       )}
+      onHide={() => {
+        setHistory((prev) => prev.slice(0, 1));
+      }}
     >
       {children}
     </Tippy>

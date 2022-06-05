@@ -5,7 +5,7 @@ import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 
-function MenuItems({ data, onClick }) {
+function MenuItem({ data, onClick }) {
   return (
     <Button
       leftIcon={data.icon}
@@ -18,4 +18,4 @@ function MenuItems({ data, onClick }) {
   );
 }
 
-export default MenuItems;
+export default MenuItem;
