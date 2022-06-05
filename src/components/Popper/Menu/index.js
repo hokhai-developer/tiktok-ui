@@ -6,10 +6,11 @@ import styles from './Menu.module.scss';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import MenuItem from './MenuItem';
 import Header from './Header';
+import { ArrowIcon } from '~/components/Icons';
 
 const cx = classNames.bind(styles);
 
-function Menu({ children, items = [] }) {
+function Menu({ children, items = [], arrow = false }) {
   const [history, setHistory] = useState([{ data: items }]);
 
   const currentMenu = history[history.length - 1];
@@ -49,6 +50,7 @@ function Menu({ children, items = [] }) {
             )}
             {items && renderItems(currentMenu)}
           </PopperWrapper>
+          <ArrowIcon className={cx(arrow ? 'arrow-user' : 'arrow')} />
         </div>
       )}
       onHide={() => {

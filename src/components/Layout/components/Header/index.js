@@ -168,7 +168,10 @@ function Header() {
             </Button>
           )}
           <>
-            <Menu items={currentUser ? userMenu : MENU_ITEMS}>
+            <Menu
+              items={currentUser ? userMenu : MENU_ITEMS}
+              arrow={currentUser ? true : false}
+            >
               {currentUser ? (
                 <div className={cx('current-user')}>
                   <Image

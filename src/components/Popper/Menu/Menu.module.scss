@@ -1,5 +1,21 @@
 .menu-list {
   min-width: 230px;
+  .arrow {
+    z-index: 10;
+    position: absolute;
+    right: 14px;
+    top: 0px;
+    transform: translateY(-8px);
+    color: var(--white);
+  }
+  .arrow-user {
+    z-index: 10;
+    position: absolute;
+    right: 20px;
+    top: 0px;
+    transform: translateY(-8px);
+    color: var(--white);
+  }
 }
 
 .menu-propper {

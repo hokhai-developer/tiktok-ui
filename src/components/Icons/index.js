@@ -335,3 +335,20 @@ export const LiveStudioIcon = ({
     ></path>
   </svg>
 );
+
+export const ArrowIcon = ({
+  width = '2.4rem',
+  height = '0.8rem',
+  className,
+}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 24 8"
+    className={className}
+    width={width}
+    height={height}
+  >
+    <path d="M0 8c7 0 10-8 12-8s5 8 12 8z"></path>
+  </svg>
+);
