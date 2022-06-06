@@ -4,27 +4,24 @@ import styles from './AccountItem.module.scss';
 
 import Image from '~/components/Image';
 import { CheckIcon } from '../Icons';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
-function AccountItem() {
+function AccountItem({ data }) {
   return (
-    <div className={cx('wrapper')}>
+    <Link to={`/@${data.nickname}`} className={cx('wrapper')}>
       <div className={cx('avatar')}>
-        <Image
-          src="https://picsum.photos/200"
-          alt="hoasdadas"
-          className={cx('image')}
-        />
+        <Image src={data.avatar} alt={data.full_name} className={cx('image')} />
       </div>
       <div className={cx('info')}>
         <p className={cx('name')}>
-          <span>Nguyen Van Teo</span>
-          <CheckIcon />
+          <span>{data.full_name}</span>
+          {data.tick && <CheckIcon />}
         </p>
-        <p className={cx('user-name')}>NguyenVanTeo123</p>
+        <p className={cx('user-name')}>{data.nickname}</p>
       </div>
-    </div>
+    </Link>
   );
 }
 
