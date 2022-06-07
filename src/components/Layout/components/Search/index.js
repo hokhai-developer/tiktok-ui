@@ -21,7 +21,6 @@ function Search() {
 
   useEffect(() => {
     if (!debounceSearchValue.trim('')) {
-      setSearchValue('');
       setSearchResult([]);
       return;
     }
@@ -51,6 +50,14 @@ function Search() {
   const handleHideResult = () => {
     setShowResult(false);
   };
+
+  const handleChange = (e) => {
+    const searchValue = e.target.value;
+    if (!searchValue.startsWith(' ')) {
+      setSearchValue(searchValue);
+    }
+  };
+
   return (
     <HeadlessTippy
       visible={searchResult.length > 0 && showResult}
@@ -75,7 +82,7 @@ function Search() {
           type="text"
           placeholder="Search accounts and videos"
           spellCheck={false}
-          onChange={(e) => setSearchValue(e.target.value)}
+          onChange={handleChange}
           onFocus={() => setShowResult(true)}
         />
         {!!searchValue && !loading && (
@@ -84,7 +91,10 @@ function Search() {
           </button>
         )}
         {loading && <LoadingIcon className={cx('loading')} />}
-        <button className={cx('search-btn')}>
+        <button
+          className={cx('search-btn')}
+          onMouseDown={(e) => e.preventDefault()}
+        >
           <SearchIcon className={cx('search-btn-icon')} />
         </button>
       </div>

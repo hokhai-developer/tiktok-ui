@@ -6,6 +6,9 @@
   --text-color: #161823;
   --white: white;
 
+  //fonts
+  --font-family: 'ProximaNova', sans-serif;
+
   //default layout
   --padding-container: 20px;
   --default-layout-header-hight: 60px;
@@ -31,11 +34,37 @@ html {
 }
 
 body {
-  font-family: 'ProximaNova', sans-serif;
+  font-family: var(--font-family);
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
   color: var(--text-color);
+  overflow-y: overlay;
+}
+//Scrollbar css
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 8px;
+}
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 8px;
+}
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 // fonts

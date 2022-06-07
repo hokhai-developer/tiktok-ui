@@ -10,7 +10,7 @@ import { ArrowIcon } from '~/components/Icons';
 
 const cx = classNames.bind(styles);
 
-function Menu({ children, items = [], arrow = false }) {
+function Menu({ children, items = [], hideOnClick = false, arrow = false }) {
   const [history, setHistory] = useState([{ data: items }]);
 
   const currentMenu = history[history.length - 1];
@@ -42,13 +42,16 @@ function Menu({ children, items = [], arrow = false }) {
       interactive
       placement="bottom-end"
       delay={[0, 500]}
+      hideOnClick={hideOnClick}
       render={(attrs) => (
         <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
-          <PopperWrapper className={cx('menu-propper')}>
+          <PopperWrapper className={cx('menu-popper')}>
             {history.length > 1 && (
               <Header title={currentMenu.title} onBack={handleBack} />
             )}
-            {items && renderItems(currentMenu)}
+            {items && (
+              <div className={cx('menu-body')}>{renderItems(currentMenu)}</div>
+            )}
           </PopperWrapper>
           <ArrowIcon className={cx(arrow ? 'arrow-user' : 'arrow')} />
         </div>

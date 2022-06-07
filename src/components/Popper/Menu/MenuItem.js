@@ -9,6 +9,7 @@ function MenuItem({ data, onClick }) {
   const classes = cx('menu-item', {
     separate: data.separate,
   });
+
   return (
     <Button
       leftIcon={data.icon}
