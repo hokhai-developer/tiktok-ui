@@ -4,33 +4,35 @@ import classNames from 'classnames';
 import images from '~/assets/images';
 import styles from './Image.module.scss';
 
-function Image(
-  {
-    src,
-    alt = 'title image',
-    className,
-    fallback: customFallback = images.noImage,
-    ...props
+const Image = forwardRef(
+  (
+    {
+      src,
+      alt = 'title image',
+      className,
+      fallback: customFallback = images.noImage,
+      ...props
+    },
+    ref,
+  ) => {
+    const [fallback, setFallback] = useState('');
+
+    const handleError = () => {
+      setFallback(customFallback);
+    };
+
+    return (
+      <img
+        alt={alt}
+        ref={ref}
+        src={fallback || src}
+        onError={handleError}
+        className={classNames(styles.wrapper, className)}
+        {...props}
+      />
+    );
   },
-  ref,
-) {
-  const [fallback, setFallback] = useState('');
-
-  const handleError = () => {
-    setFallback(customFallback);
-  };
-
-  return (
-    <img
-      alt={alt}
-      ref={ref}
-      src={fallback || src}
-      onError={handleError}
-      className={classNames(styles.wrapper, className)}
-      {...props}
-    />
-  );
-}
+);
 
 Image.propTypes = {
   src: PropTypes.string,
@@ -39,4 +41,4 @@ Image.propTypes = {
   fallback: PropTypes.string,
 };
 
-export default forwardRef(Image);
+export default Image;
