@@ -5,7 +5,6 @@ const request = axios.create({
 });
 
 //custom get put post delete...
-
 export const get = async (path, option = {}) => {
   const reponse = await request.get(path, option);
   return reponse.data;
